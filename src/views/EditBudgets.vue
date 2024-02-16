@@ -62,7 +62,7 @@ export default {
     },
     methods: {
         getData() {
-            fetch('http://193.70.91.1:3221/api/v1/budget/' + this.$route.params.budgetId)
+            fetch('http://5.42.94.18:3000/api/v1/budget/' + this.$route.params.budgetId)
                 .then(response => response.text())
                 .then(response => JSON.parse(response))
                 .then(response => {
@@ -73,7 +73,7 @@ export default {
                 });
         },
         getCategory() {
-            fetch('http://193.70.91.1:3221/api/v1/category')
+            fetch('http://5.42.94.18:3000/api/v1/category')
                 .then(response => response.text())
                 .then(response => JSON.parse(response))
                 .then(response => {
@@ -96,7 +96,7 @@ export default {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ category_id: this.dastebandi, amount: this.amount, year: 1402, month: 4 })
             };
-            fetch('http://193.70.91.1:3221/api/v1/budget/' + this.$route.params.budgetId, requestOptions)
+            fetch('http://5.42.94.18:3000/api/v1/budget/' + this.$route.params.budgetId, requestOptions)
                 .then(response => {
                     if (response.status === 204) {
                         this.isSuccess = true;

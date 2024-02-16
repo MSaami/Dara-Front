@@ -37,7 +37,7 @@
     </div>
     <div class="relative">
         <div class=" absolute left-36 bottom-415">
-            <h1 class="text-xl text-secondary-color"> این بودجه برای ماه مهر سال ۱۴۰۲ می باشد </h1>
+            <h1 class="text-xl text-secondary-color">این بودجه برای ماه اسفند میباشد.</h1>
         </div>
     </div>
     <div v-if="isSuccess" class="text-secondary-color font-bold text-2xl -mt-48 text-center">
@@ -64,7 +64,7 @@ export default {
     },
     methods: {
         getCategory() {
-            fetch('http://193.70.91.1:3221/api/v1/category')
+            fetch('http://5.42.94.18:3000/api/v1/category')
                 .then(response => response.json())
                 .then(response => {
                     this.categoris = response.data
@@ -85,9 +85,9 @@ export default {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ category_id: this.category, amount: this.amount, year: 1402, month: 7 })
+                body: JSON.stringify({ category_id: this.category, amount: this.amount, year: 1402, month: 12 })
             };
-            fetch('http://193.70.91.1:3221/api/v1/wallet/2/budget', requestOptions)
+            fetch('http://5.42.94.18:3000/api/v1/wallet/2/budget', requestOptions)
                 .then(response => {
                     if (response.status === 204) {
                         this.isSuccess = true

@@ -69,7 +69,7 @@ export default {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
             };
-            fetch('http://193.70.91.1:3221/api/v1/budget/' + budgetId, requestOptions)
+            fetch('http://5.42.94.18:3000/api/v1/budget/' + budgetId, requestOptions)
                 .then(response => {
                     if (response.status === 204) {
                         this.afterDelete()
@@ -80,7 +80,7 @@ export default {
             this.getBudgets()
         },
         getBudgets() {
-            fetch('http://193.70.91.1:3221/api/v1/wallet/2/budget')
+            fetch('http://5.42.94.18:3000/api/v1/wallet/2/budget')
                 .then(response => response.text())
                 .then(response => JSON.parse(response))
                 .then(response => {
@@ -99,7 +99,7 @@ export default {
             return esme_mah
         },
         getCategory() {
-            fetch('http://193.70.91.1:3221/api/v1/category')
+            fetch('http://5.42.94.18:3000/api/v1/category')
                 .then(response => response.json())
                 .then(response => {
                     this.categoris = response.data

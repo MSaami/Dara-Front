@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         getData() {
-            fetch('http://193.70.91.1:3221/api/v1/loan/' + this.$route.params.loanId + '/installment')
+            fetch('http://5.42.94.18:3000/api/v1/loan/' + this.$route.params.loanId + '/installment')
                 .then(response => response.json())
                 .then(response => {
                     this.installments = response.data
@@ -63,7 +63,7 @@ export default {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
             };
-            fetch('http://193.70.91.1:3221/api/v1/installment/' + installmentId + '/pay', requestOptions)
+            fetch('http://5.42.94.18:3000/api/v1/installment/' + installmentId + '/pay', requestOptions)
                 .then(response => {
                     if (response.status === 204) {
                         this.isSuccess = true;

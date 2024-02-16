@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         getLoan() {
-            fetch('http://193.70.91.1:3221/api/v1/loan/' + this.$route.params.loanId)
+            fetch('http://5.42.94.18:3000/api/v1/loan/' + this.$route.params.loanId)
                 .then(response => response.text())
                 .then(response => JSON.parse(response))
                 .then(response => {
@@ -56,7 +56,7 @@ export default {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title:this.title, amount:this.amount })
             };
-            fetch('http://193.70.91.1:3221/api/v1/loan/' + this.$route.params.loanId, requestOptions)
+            fetch('http://5.42.94.18:3000/api/v1/loan/' + this.$route.params.loanId, requestOptions)
                 .then(response => {
                     if (response.status == 204) {
                         this.isSuccess = true

@@ -104,7 +104,7 @@ export default {
                     }
                 })
             };
-            fetch('http://193.70.91.1:3221/api/v1/wallet/2/loan', requestOptions)
+            fetch('http://5.42.94.18:3000/api/v1/wallet/2/loan', requestOptions)
                 .then(response => {
                     if (response.status === 204) {
                         this.isSuccess = true;
