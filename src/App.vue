@@ -18,7 +18,7 @@
 <script >
 import { RouterLink, RouterView } from 'vue-router'
 import List from './components/List.vue';
-import NavBar from './components/navbar.vue';
+import NavBar from './components/NavBar.vue';
 import EditTransactions from './views/EditTransactions.vue';
 export default {
   data() {
